@@ -1,0 +1,64 @@
+          
+			{"dishlist":[
+			{
+				"id": "1",
+				"dishname": "Paneer butter masala",
+				"img": "/images/pneer-butter-masala.jpg",
+				"price":"270"
+			},
+			{
+				"id": "2",
+				"dishname": "Ganache Cake",
+				"img": "/images/Ganache-Cake.jpg",
+				"price":"280"	
+			},
+			{
+				"id": "3",
+				"dishname": "Masala Butter Milk",
+				"img": "/images/Masala-Butter-Milk.jpg",
+				"price":"260"
+			},
+			{
+				"id": "4",
+				"dishname": "rajma masala",
+				"img": "/images/rajma masala.jpg",
+				"price":"300"
+			},
+			{
+				"id": "5",
+				"dishname": "Rice Kheer",
+				"img": "/images/Rice-Kheer.jpg",
+				"price":"270"
+			},
+			{
+				"id": "6",
+				"dishname": "Kadhai_Chole_and_Veg_Kolhapuri",
+				"img": "/images/Kadhai_Chole_and_Veg_Kolhapuri.jpg",
+				"price":"290"
+			},
+			{
+				"id": "7",
+				"dishname": "Rice Kheer",
+				"img": "/images/Rice-Kheer.jpg",
+				"price":"270"
+			},
+			{
+				"id": "8",
+				"dishname": "Kadhai_Chole_and_Veg_Kolhapuri",
+				"img": "/images/Kadhai_Chole_and_Veg_Kolhapuri.jpg",
+				"price":"290"
+			},
+			{
+				"id": "9",
+				"dishname": "Rice Kheer",
+				"img": "/images/Rice-Kheer.jpg",
+				"price":"270"
+			},
+			{
+				"id": "10",
+				"dishname": "Kadhai_Chole_and_Veg_Kolhapuri",
+				"img": "/images/Kadhai_Chole_and_Veg_Kolhapuri.jpg",
+				"price":"290"
+			}
+			]
+			}

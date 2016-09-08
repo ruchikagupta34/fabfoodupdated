@@ -1,0 +1,20 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group  form-box modal-md modal" id="regmodal">
+				<div class="form-login modal-header">
+				<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+					<form ng-controller="RegisterCtrl" class="register-form modal-body" ng-submit="register()" >
+					    <div class="form-field"><label>username</label><input type="text" class="for-text form-control" name="username" ng-model="registerForm.username" required></div>
+					    
+					    <div class="form-field"><label>password</label><input type="password" class="for-password form-control" name="password" ng-model="registerForm.password" required></div>
+					    
+						<button type="submit" class="btn modal-login-butn-1 modal-footer registerButton btn-primary btn-sm" ng-disabled="disabled"  data-toggle="modal" data-dismiss="modal">Register </button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+ 			

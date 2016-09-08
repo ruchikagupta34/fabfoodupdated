@@ -1,0 +1,184 @@
+<div id="list">	
+		<div class="container-fluid">
+			<div class="row">
+				<div class="section1">
+					<img><div width="1349" class="img-responsive dish-list-image">
+						<div class="col-sm-3 col-xs-3 timeings">
+							<div ng-controller="ScrollController">
+								<div id="scrollArea">
+								  	<a ng-click="gotoBottom()">Go to bottom</a>
+								</div>
+							</div>
+						</div>
+						<div class=" col-sm-3 col-xs-9 col-md-6  header-right">
+							<ul class="header-btn">
+								<li ng-controller="logoutController">
+								  <button ng-click='logout()' id="logout"  class="btn btn-default ">Logout</button>
+								</li>
+							</ul>
+						</div>
+
+						<script>$('#logout').click( function() {
+									window.localStorage.clear();
+									location.reload();
+									return false;
+									});
+						</script>
+						<div class="col-xs-12">
+							<div class="dish-tag"> 
+								<div class="col-md-8  col-sm-6 col-lg-6">
+									<div class="choose">Choose Yummy</div>
+								</div>
+								<div class=" col-sm-3 col-md-1 col-lg-1">
+								<div class="dishtypetext" ng-repeat="foodtype in dishoption"> {{foodtype.datatype}} </div>
+								</div> 
+								<div class="col-sm-3 col-md-3 col-lg-5 dishtext">Dishes!</div>
+							</div>
+						</div>
+						<div class="card container-fluid">
+							<div class="row">
+								<div class="col-xs-12">
+					  				<ul class="menu-list-in-card">
+					  					<div class="col-xs-6 col-sm-3">
+					  						<a href="#/breakfast">
+							  					<li class="dish-icon">
+							  						<img src="/images/food-images/burger.png">
+							  						<span>Breakfast</span>
+							  						<div class="vr">&nbsp;</div>
+							  					</li>
+							  				</a>
+						  				</div>
+						  				<div class="col-xs-6 col-sm-3">
+						  					<a href="#/lunch">
+							  					<li class="dish-icon">
+							  						<img src="/images/food-images/groceries.png">
+							  						<span>Lunch</span>
+							  						<div class="vr">&nbsp;</div>
+							  					</li>
+						  					</a>
+						  				</div>
+						  				<div class="col-xs-6 col-sm-3">
+						  					<a href="#/dinner">
+							  					<li class="dish-icon">
+							  						<img src="/images/food-images/pizza.png">
+							  						<span>Dinner</span>
+							  						<div class="vr">&nbsp;</div>
+							  					</li>
+							  				</a>
+						  				</div>
+						  				<div class="col-xs-6 col-sm-3">
+						  					<a href="#/dessert">
+							  					<li class="dish-icon">
+							  						<img src="/images/food-images/ice-cream.png">
+							  						<span>Dessert</span>
+							  						<div class="vr">&nbsp;</div>
+							  					</li>
+							  				</a>
+						  				</div>
+					  				</ul>
+					  			</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	 
+
+		
+		<div class="section2">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+						<div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 sort-by" id="sort-by-scroll">
+							<h4>Sort by </h4>
+							<div><li class="sort-budget"  ng-click="sortBy('price')" ><img class="budget" src="\images\Rupees.png" width="30" height="20" ></img>Budget</li>
+							<span ng-show="propertyName === 'price'" ng-class="{reverse: reverse}" ></span>
+							</div>
+									
+
+							<div><li class="sort-rating" ng-click="sortBy('rating')"><img class="star" src="\images\Rating.png" width="30" height="20"></img>Dish Rating</li>
+							<span ng-show="propertyName === 'rating'" ng-class="{reverse: reverse}" ></span>
+							</div>
+									
+
+							<div><li class="sort-chef-name" ng-click="sortBy('chefName')"><span class="glyphicon chef-icon glyphicon-user"></span>Chef Name</li>
+							<span ng-show="propertyName === 'chef-name'" ng-class="{reverse: reverse}"></span></div>
+						</div>
+						<div class="col-lg-6 col-xs-12 col-md-6 all-dishes">
+									<div ng-repeat= "dishList in FabFood" class="dish-image">
+										<div class="row">	
+											<div class="col-xs-12 ">
+												<div class="dish-option"><b>{{dishList.type}}</b></div>
+										 	</div>
+										</div>
+										<div ng-repeat="healthy in dishList.dishes  |   orderBy:propertyName:reverse"  class="dish-image">
+											<div class="col-sm-6 col-xs-12  box-height">
+												<div class="img-rounded">
+												 	<img ng-src= "{{healthy.img}}" / class="img-responsive "> 
+												 		<div class="dish-description">
+													 		<div class="name-price">
+														 		<div class="col-sm-6 col-xs-6">
+														 			<div class="dish-name">{{healthy.dishname}}
+														 			</div>
+																</div>
+																<div class="col-sm-6 col-xs-6">
+																    <div class="dish-price">{{healthy.price}}$</div>
+																</div>
+															</div>
+															<div class="add-button">
+																<div class="col-md-12 col-xs-12">
+																    <div class="add-dishes" ng-controller="dish-data">
+																		<ngcart-addtocart id="{{healthy.id}}" name= "{{healthy.dishname}}" price="{{healthy.price}}" quantity="1" quantity-max="5"> +
+																		</ngcart-addtocart>
+																	</div>	
+																</div>
+															</div>
+															
+															<div class="col-xs-12 col-md-3 rating-chef-name">
+																<div class="col-xs-4 rating-box">
+																	<div class="ratings">{{healthy.rating}}
+																	</div>
+																</div>
+																<div class="col-xs-8">
+																	<div class="chef-box">
+																		<div class="chef-name">
+																				{{healthy.chefName}}
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>	
+										</div>
+									</div>
+						</div>
+
+						<div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 cart-box" ng-controller="dish-data" >
+							<ngcart-summary></ngcart-summary> 
+							<ngcart-cart></ngcart-cart>
+							<button type="submit" class="btn checkout-butn  btn-primary btn-sm">CheckOut </button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a id="bottom"></a> You're at the bottom!
+</div>
+
+
+<!-- // window.onscroll = function() {myFunction()};
+// function myFunction() {
+//     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+//         document.getElementById("scrollforcard").className = "cart-scroll";
+//         document.getElementById("sort-by-scroll").className = "sort-by-top";
+
+//     }  else {
+//         document.getElementById("scrollforcard").className = "cart-box";
+//         document.getElementById("sort-by-scroll").className = "sort-by";
+
+//     }
+// }
+
+ -->

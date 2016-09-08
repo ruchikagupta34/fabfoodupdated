@@ -1,0 +1,113 @@
+<div id="dish-type">
+		<header>
+			
+			<div class="wrap">
+				<div class="container-fluid main-page">
+					<div class="row landing-page carousel-inner"> 
+						<div class="col-xs-12 col-lg-12 col-md-12 header-bottom active">
+							<div class="img-responsive item" data-slides='["/images/landing-home-page1.jpg","/images/home-page-screen.jpg","/images/headline.jpg","/images/home-page-headline.jpg"]'>	
+								<div class=" col-sm-12 col-xs-12 col-md-5  header-right">
+									<div class="header-btn">
+										<div class="col-xs-6 col-sm-8">
+										<div class="cartItems img-rectangle"><b><ngcart-summary></ngcart-summary> </b></div>
+									    </div>
+									    <div class="col-xs-3 col-sm-2">
+										<div class="right-btn"   id="loginbutn" ><a ng-click="showlogin()" id="login" class="btn-login" ng-controller="modalLoginCtrl"><b>LOGIN</b></a></div></div>
+										<div class="col-xs-3 col-sm-2">
+										<div class="right-btn "   id="loginbutn" ><a  ng-click="showreg()" id="showreg" ng-controller="modalCtrl" class="btn-login"><b>SIGNUP</b></a></div>
+									    </div>
+									</div>
+								</div>
+								<div class="col-sm-12 col-xs-12 col-md-9">
+									<p class="web-name" ><b><strong>FAB-FOOD</strong></b></p>
+								</div>	
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</header>
+		<script>
+			(function($) {
+
+		    'use strict';
+
+		    var $slides = $('[data-slides]');
+		    var images = $slides.data('slides');
+		    var count = images.length;
+		    var slideshow = function() {
+		        $slides
+		            .css('background-image', 'url("' + images[Math.floor(Math.random() * count)] + '")')
+		            .show(0, function() {
+		                setTimeout(slideshow, 5000);
+		            });
+		    };
+
+		    slideshow();
+
+			}(jQuery));
+		</script>
+		
+	<div class="section0">
+		<div class="w3-container">
+			<div class="row menu-heading">
+				<div class="col-xs-12 col-md-12 col-lg-12 col-sm-12">
+					<div class="ordertype">
+						Choose one to start building your order
+					</div>
+				</div>
+			</div>
+			<div class="row menu-type ">
+				<div class="col-sm-12 col-xs-12">	
+						<div class="col-sm-9 col-md-9 col-xs-9 col-lg-9 menu-in-circle ">
+							<img><a href="#/breakfast" alt="..." class="img-responsive img-breakfast img-rectangle">
+							<div class="breakfast-time pull-center"><b>BREAKFAST</b></div></a></img>
+						</div>
+						<div class="col-xs-3 kids-menu">	
+								<div class="kids-dishes"><a href="#/kidsspecial">	
+										<div class="kids-special">KIDS SPECIAL </div></a>
+								</div>
+						</div>	
+				</div>
+				<div class="col-sm-12 col-xs-12">
+						<div class="col-xs-3 kids-menu">	
+							<div class="kids-dishes">	
+										<div class="kids-special">KIDS LUNCH BOX</div>
+							</div>	
+	
+						</div>		
+						<div class="col-sm-9 col-md-9 col-xs-9 col-lg-9 menu-in-circle">
+							<div class="lunch">
+								<img><a href="#/lunch"  alt="..." class="img-responsive img-rectangle  img-lunch">
+								<div class="lunch-time"><b>LUNCH</b></div></a></img>
+							</div>
+						</div>
+				</div>
+				<div class="col-sm-12 col-xs-12">
+						<div class="col-sm-9 col-md-9 col-xs-9 col-lg-9 menu-in-dinner">
+							<div class="menu-in-circle">
+								<img><a href="#/dinner" alt="..." class="img-responsive img-dinner img-rectangle">
+								<div class="dinner-time" ><b>DINNER</b></div></a></img>
+							</div>
+						</div>
+						<div class="col-xs-3 kids-menu">
+							<div class="kids-dishes">	
+								<div class="kids-special">KIDS DINNER TIME</div>
+							</div>	
+						</div>
+				</div>
+				<div class="col-sm-12 col-xs-12">	
+						<div class="col-xs-3 kids-menu">	
+								<div class="kids-dishes">	
+									<div class="kids-special">MUMMY KA MAGIC</div>
+								</div>
+						</div>	
+						<div class="col-sm-9 col-md-9 col-xs-9 col-lg-9 menu-in-circle">
+							<img><a href="#/dessert"  alt="..." class="img-rectangle img-dessert img-responsive">
+							<div class="dessert-time"><b>DESSERT</b></div></a></img>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div> 	
+</div>

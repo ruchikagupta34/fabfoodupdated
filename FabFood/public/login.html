@@ -1,0 +1,13 @@
+<div  id="modal" class="form-group form-box modal" ng-controller="LoginCtrl">
+	<div class="form-login modal-header">
+	<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+		<form   class="login-form modal-body " ng-submit="login()">
+		    <div class="form-field"><label>username</label><input type="text" class="form-control" ng-model="loginForm.username" name="username" required></div>
+
+		    <div class="form-field"><label>Password:</label><input type="password" class="form-control" ng-model="loginForm.password" name="password" required></div>
+		
+			<button type="submit" class="btn modal-footer modalclose loginButton modal-login-butn-1 btn-primary btn-sm" ng-disabled="disabled" id="closemodal" data-dismiss="modal"> login</button>
+		</form>
+	</div>
+</div>
+
